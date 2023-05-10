@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 
 // Create server
 const app = express();
-const port = 3001;
+//const port = 3001;
 
 //Connection to DB
 mongoose.connect(process.env.DATABASE_URL_CLOUD, {useNewUrlParser: true});
@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 //Routes
 
-//port = process.env.PORT || 3001;
+const port = process.env.PORT || 4000;
 
 //Start the server
 app.use("/", require("./routes/routes"));
